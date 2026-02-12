@@ -43,4 +43,5 @@ Textures:
 - Poly Haven (CC0): garage floor + concrete wall textures
 
 Prop images:
-- FreeSVG public-domain workbench, gun, and light-switch images
+- FreeSVG public-domain workbench + light-switch images
+- PublicDomainVectors public-domain pistol image
