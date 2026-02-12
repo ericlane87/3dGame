@@ -61,6 +61,22 @@ canvas {
   color: var(--muted);
 }
 
+#workbench-prompt {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 14, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+#workbench-prompt.hidden {
+  display: none;
+}
+
 #noise {
   position: absolute;
   top: 12px;
@@ -95,6 +111,108 @@ canvas {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);
   pointer-events: none;
+}
+
+#workbench-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 12, 0.85);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+#workbench-overlay.hidden {
+  display: none;
+}
+
+.workbench-scene {
+  width: min(90vw, 720px);
+  height: min(80vh, 420px);
+  background: radial-gradient(circle at top, rgba(255, 222, 180, 0.2), transparent 60%),
+    linear-gradient(180deg, #12181d 0%, #0b0f12 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bench-light {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#bench-switch {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 222, 180, 0.0));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.bench-light-glow {
+  position: absolute;
+  left: 40px;
+  top: 60px;
+  width: 180px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 210, 140, 0.6), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.bench-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.bench-panel {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  gap: 12px;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.bench-panel.hidden {
+  display: none;
+}
+
+#bench-gun {
+  width: min(60vw, 420px);
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+}
+
+.bench-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#bench-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+#workbench-overlay.on #bench-switch {
+  transform: translateY(6px);
+  filter: drop-shadow(0 0 12px rgba(255, 222, 180, 0.7));
+}
+
+#workbench-overlay.on .bench-light-glow {
+  opacity: 1;
 }
 
 #map-modal {

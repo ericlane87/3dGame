@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-15417342d295584c702",applicationID:"525287958",browserID:"525289795"};;/*! For license information please see nr-loader-rum-1.309.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={163:(e,t,r)=>{"use strict";r.d(t,{j:()=>E});var n=r(384),i=r(1741);var a=r(2555);r(860).K7.genericEvents;const s="experimental.resources",o="register",c=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=r(2614),u=r(944),l=r(8122);const f="[data-nr-mask]",g=e=>(0,l.a)(e,(()=>{const e={feature_flags:[],experimental:{allow_registered_children:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{get allow_registered_children(){return e.feature_flags.includes(o)||e.experimental.allow_registered_children},set allow_registered_children(t){e.experimental.allow_registered_children=t},duplicate_registered_data:!1},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(s)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:d.wk,inactiveMs:d.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){c(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,u.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){c(t)?e.block_selector+=",".concat(t):""!==t&&(0,u.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,u.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var p=r(6154),m=r(9324);let h=0;const v={buildEnv:m.F3,distMethod:m.Xs,version:m.xv,originTime:p.WN},b={consented:!1},y={appMetadata:{},get consented(){return this.session?.state?.consent||b.consented},set consented(e){b.consented=e},customTransaction:void 0,denyList:void 0,disabled:!1,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++h}},_=e=>{const t=(0,l.a)(e,y),r=Object.keys(v).reduce((e,t)=>(e[t]={value:v[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)};var w=r(5701);const x=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var R=r(7836),k=r(3241);const A={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},S=e=>(0,l.a)(e,A),T=new Set;function E(e,t={},r,s){let{init:o,info:c,loader_config:d,runtime:u={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();o=e.init,c=e.info,d=e.loader_config}e.init=g(o||{}),e.loader_config=S(d||{}),c.jsAttributes??={},p.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,a.D)(c);const f=e.init,m=[c.beacon,c.errorBeacon];T.has(e.agentIdentifier)||(f.proxy.assets&&(x(f.proxy.assets),m.push(f.proxy.assets)),f.proxy.beacon&&m.push(f.proxy.beacon),e.beacons=[...m],function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let a=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return a?a(...t):n})})}(e),(0,n.US)("activatedFeatures",w.B)),u.denyList=[...f.ajax.deny_list||[],...f.ajax.block_internal?m:[]],u.ptid=e.agentIdentifier,u.loaderType=r,e.runtime=_(u),T.has(e.agentIdentifier)||(e.ee=R.ee.get(e.agentIdentifier),e.exposed=l,(0,k.W)({agentIdentifier:e.agentIdentifier,drained:!!w.B?.[e.agentIdentifier],type:"lifecycle",name:"initialize",feature:void 0,data:e.config})),T.add(e.agentIdentifier)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>o,US:()=>l,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>f});var n=r(6154),i=r(1863),a=r(944),s=r(1910);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,a.R)(69)}function l(e,t){c()[e]=t}function f(){return function(){let e=c();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>o,df:()=>a,qY:()=>n,v4:()=>s});const n="events",i="jserrors",a="browser/blobs",s="rum",o="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},d={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.spa]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.softNav]:8,[c.sessionReplay]:9,[c.logging]:10,[c.genericEvents]:11},u={[c.pageViewEvent]:s,[c.pageViewTiming]:n,[c.ajax]:n,[c.spa]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:a,[c.sessionReplay]:a,[c.logging]:o,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({agentIdentifier:null,drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>d,Ze:()=>f,x3:()=>u});var n=r(3241),i=r(7836),a=r(3606),s=r(860),o=r(2646);const c={};function d(e,t){const r={staged:!1,priority:s.P3[t]||0};l(e),c[e].get(t)||c[e].set(t,r)}function u(e,t){e&&c[e]&&(c[e].get(t)&&c[e].delete(t),p(e,t,!1),c[e].size&&g(e))}function l(e){if(!e)throw new Error("agentIdentifier required");c[e]||(c[e]=new Map)}function f(e="",t="feature",r=!1){if(l(e),!e||!c[e].get(t)||r)return p(e,t);c[e].get(t).staged=!0,g(e)}function g(e){const t=Array.from(c[e]);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{c[e].delete(t),p(e,t)}))}function p(e,t,r=!0){const s=e?i.ee.get(e):i.ee,c=a.i.handlers;if(!s.aborted&&s.backlog&&c){if((0,n.W)({agentIdentifier:e,type:"lifecycle",name:"drain",feature:t}),r){const e=s.backlog[t],r=c[t];if(r){for(let t=0;e&&t<e.length;++t)m(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}s.isolatedBacklog||delete c[t],s.backlog[t]=null,s.emit("drain-"+t,[])}}function m(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],a=e[2];n.apply(i,a)}})}},1738:(e,t,r)=>{"use strict";r.d(t,{U:()=>g,Y:()=>f});var n=r(3241),i=r(9908),a=r(1863),s=r(944),o=r(5701),c=r(3969),d=r(8362),u=r(860),l=r(4261);function f(e,t,r,a){const f=a||r;!f||f[e]&&f[e]!==d.d.prototype[e]||(f[e]=function(){(0,i.p)(c.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({agentIdentifier:r.agentIdentifier,drained:!!o.B?.[r.agentIdentifier],type:"data",name:"api",feature:l.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,s.R)(23,e)}})}function g(e,t,r,n,s){const o=e.info;null===r?delete o.jsAttributes[t]:o.jsAttributes[t]=r,(s||null===r)&&(0,i.p)(l.Pl+n,[(0,a.t)(),t,r],void 0,"session",e.ee)}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(944),i=r(4261);class a{#e(e,...t){if(this[e]!==a.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>a});var n=r(944);const i=new Map;function a(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),a=t.includes("nrWrapper");return r||a||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>o,f:()=>s});var n=r(384),i=r(8122);const a={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function s(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const o=e=>(0,i.a)(e,a)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>s,H3:()=>n,g:()=>d,iL:()=>c,tS:()=>o,uh:()=>i,wk:()=>a});const n="NRBA",i="SESSION",a=144e5,s=18e5,o={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},d={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>a,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function a(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(6154);const i="newrelic";function a(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>a});var n=r(9908);a.on=s;var i=a.handlers={};function a(e,t,r,a){s(a||n.d,i,e,t,r)}function s(e,t,r,i,a){a||(a="feature"),e||(e=n.d);var s=t[a]=t[a]||{};(s[r]=s[r]||[]).push([e,i])}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function a(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>a,jT:()=>n,sp:()=>i})},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>o,rs:()=>i,xV:()=>s,z_:()=>a});const n=r(860).K7.metrics,i="sm",a="cm",s="storeSupportabilityMetrics",o="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>a});var n=r(7836),i=r(1687);class a{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>d,BL:()=>o,CH:()=>g,Dl:()=>_,Fw:()=>y,PA:()=>h,Pl:()=>n,Pv:()=>k,Tb:()=>l,U2:()=>a,V1:()=>R,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>w,dT:()=>c,eY:()=>p,fF:()=>f,hG:()=>i,k6:()=>s,nb:()=>m,o5:()=>u});const n="api-",i="addPageAction",a="addToTrace",s="addRelease",o="finished",c="interaction",d="log",u="noticeError",l="pauseReplay",f="recordCustomEvent",g="recordReplay",p="register",m="setApplicationVersion",h="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",_="setUserId",w="start",x="wrapLogger",R="measure",k="consent"},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>s,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function a(){return"undefined"==typeof document||"complete"===document.readyState}function s(e,t){if(a())return e();const r=(0,i.J)(e),s=setInterval(()=>{a()&&(clearInterval(s),r())},500);(0,n.sp)("load",r,t)}function o(e){if(a())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(a())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},5701:(e,t,r)=>{"use strict";r.d(t,{B:()=>a,t:()=>s});var n=r(3241);const i=new Set,a={};function s(e,t){const r=t.agentIdentifier;a[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),a[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>c,RI:()=>i,WN:()=>u,bv:()=>a,eN:()=>l,gm:()=>s,mw:()=>o,sb:()=>d});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,a="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),s=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===s?.document?.visibilityState),c=/iPad|iPhone|iPod/.test(s.navigator?.userAgent),d=c&&"undefined"==typeof SharedWorker,u=((()=>{const e=s.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)()),l=()=>"undefined"!=typeof PerformanceNavigationTiming&&s?.performance?.getEntriesByType("navigation")?.[0]?.responseStart},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>a,KC:()=>o,No:()=>i,qh:()=>s});var n=r(860);const i=16e3,a=1e6,s="SESSION_ERROR",o={[n.K7.logging]:!0,[n.K7.genericEvents]:!1,[n.K7.jserrors]:!1,[n.K7.ajax]:!1}},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>o,ee:()=>c});var n=r(384),i=r(8990),a=r(2646),s=r(5607);const o="nr@context:".concat(s.W),c=function e(t,r){var n={},s={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,a){!1!==a&&(a=!0);if(c.aborted&&!i)return;t&&a&&t.emit(e,r,n);var o=g(n);m(e).forEach(e=>{e.apply(o,r)});var d=v()[s[e]];d&&d.push([f,e,r,o]);return o},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{s[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,o,()=>new a.y(o)):new a.y(o)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return u[t]=u[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c)},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),a=0===Object.keys(r).length?e:r;for(let s in a)if(void 0!==e[s])try{if(null===e[s]){r[s]=null;continue}Array.isArray(e[s])&&Array.isArray(t[s])?r[s]=Array.from(new Set([...e[s],...t[s]])):"object"==typeof e[s]&&"object"==typeof t[s]?r[s]=i(e[s],t[s]):r[s]=e[s]}catch(e){r[s]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8362:(e,t,r)=>{"use strict";r.d(t,{d:()=>a});var n=r(9566),i=r(1741);class a extends i.W{agentIdentifier=(0,n.LA)(16)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>a,xv:()=>n});const n="1.309.0",i="PROD",a="CDN"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>o,bz:()=>s});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function a(e,t){return e?15&e[t]:16*Math.random()|0}function s(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?a(t,r++).toString(16):"y"===e?(3&a()|8).toString(16):e).join("")}function o(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const s=[];for(var o=0;o<e;o++)s.push(a(r,i++).toString(16));return s.join("")}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,a){a?(a.buffer([e],i),a.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var a=n[e]={exports:{}};return r[e](a,a.exports,i),a.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>"nr-rum-1.309.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.309.0.PROD:",i.l=(r,n,a,s)=>{if(e[r])e[r].push(n);else{var o,c;if(void 0!==a)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+a){o=l;break}}if(!o){c=!0;var f={296:"sha512-ZBBVWt6PVOQQpTGc/xzYP/zYs+pj6QnNTqG2pFYHQrwWdUi4/1lsIi9EaFcj4Ifn3O38eFqKr9dqSv/HftTqtA=="};(o=document.createElement("script")).charset="utf-8",i.nc&&o.setAttribute("nonce",i.nc),o.setAttribute("data-webpack",t+a),o.src=r,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),f[s]&&(o.integrity=f[s])}e[r]=[n];var g=(t,n)=>{o.onerror=o.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],o.parentNode&&o.parentNode.removeChild(o),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=g.bind(null,o.onerror),o.onload=g.bind(null,o.onload),c&&document.head.appendChild(o)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var a=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=a);var s=i.p+i.u(t),o=new Error;i.l(s,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var a=r&&("load"===r.type?"missing":r.type),s=r&&r.target&&r.target.src;o.message="Loading chunk "+t+" failed: ("+a+": "+s+")",o.name="ChunkLoadError",o.type=a,o.request=s,n[1](o)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,a,[s,o,c]=r,d=0;if(s.some(t=>0!==e[t])){for(n in o)i.o(o,n)&&(i.m[n]=o[n]);if(c)c(i)}for(t&&t(r);d<s.length;d++)a=s[d],i.o(e,a)&&e[a]&&e[a][0](),e[a]=0},r=self["webpackChunk:NRBA-1.309.0.PROD"]=self["webpackChunk:NRBA-1.309.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(8362),t=i(860);const r=Object.values(t.K7);var n=i(163);var a=i(9908),s=i(1863),o=i(4261),c=i(1738);var d=i(1687),u=i(4234),l=i(5289),f=i(6154),g=i(944),p=i(384);const m=e=>f.RI&&!0===e?.privacy.cookies_enabled;function h(e){return!!(0,p.dV)().o.MO&&m(e)&&!0===e?.session_trace.enabled}var v=i(6389),b=i(7699);class y extends u.W{constructor(e,t){super(e.agentIdentifier,t),this.agentRef=e,this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,v.J)(()=>{(0,d.Ak)(e.agentIdentifier,this.featureName),t()}))}):(0,d.Ak)(e.agentIdentifier,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if(m(e.init)){const{setupAgentSession:t}=await i.e(296).then(i.bind(i,3305));n=t(e)}}catch(e){(0,g.R)(20,e),this.ee.emit("internal-error",[e]),(0,a.p)(b.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,d.Ze)(this.agentIdentifier,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,g.R)(34,e),this.abortHandler?.(),(0,d.Ze)(this.agentIdentifier,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};f.RI?(0,l.GG)(()=>n(),!0):n()}#t(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return h(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}}var _=i(6630),w=i(2614),x=i(3241);class R extends y{static featureName=_.T;constructor(e){var t;super(e,_.T),this.setupInspectionEvents(e.agentIdentifier),t=e,(0,c.Y)(o.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,a.p)(o.Pl+o.Fw,[(0,s.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(296).then(i.bind(i,3943)))}setupInspectionEvents(e){const t=(t,r)=>{t&&(0,x.W)({agentIdentifier:e,timeStamp:t.timeStamp,loaded:"complete"===t.target.readyState,type:"window",name:r,data:t.target.location+""})};(0,l.sB)(e=>{t(e,"DOMContentLoaded")}),(0,l.GG)(e=>{t(e,"load")}),(0,l.Qr)(e=>{t(e,"navigate")}),this.ee.on(w.tS.UPDATE,(t,r)=>{(0,x.W)({agentIdentifier:e,type:"lifecycle",name:"session",data:r})})}}class k extends e.d{constructor(e){var t;(super(),f.gm)?(this.features={},(0,p.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(R),(0,n.j)(this,e,e.loaderType||"agent"),t=this,(0,c.Y)(o.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,c.U)(t,e,r,o.cD,n);(0,g.R)(40,typeof r)}else(0,g.R)(39,typeof e)},t),function(e){(0,c.Y)(o.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,g.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,a.p)(o.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,c.U)(e,"enduser.id",t,o.Dl,!0)},e)}(this),function(e){(0,c.Y)(o.nb,function(t){if("string"==typeof t||null===t)return(0,c.U)(e,"application.version",t,o.nb,!1);(0,g.R)(42,typeof t)},e)}(this),function(e){(0,c.Y)(o.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,c.Y)(o.Pv,function(t=!0){if("boolean"==typeof t){if((0,a.p)(o.Pl+o.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,g.R)(65,typeof t)},e)}(this),this.run()):(0,g.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;if(r.featureName===t.K7.spa)return void(0,g.R)(67);const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,g.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,g.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,p.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var A=i(2843),S=i(782);class T extends y{static featureName=S.T;constructor(e){super(e,S.T),f.RI&&((0,A.u)(()=>(0,a.p)("docHidden",[(0,s.t)()],void 0,S.T,this.ee),!0),(0,A.G)(()=>(0,a.p)("winPagehide",[(0,s.t)()],void 0,S.T,this.ee)),this.importAggregator(e,()=>i.e(296).then(i.bind(i,2117))))}}var E=i(3969);class j extends y{static featureName=E.TZ;constructor(e){super(e,E.TZ),f.RI&&document.addEventListener("securitypolicyviolation",e=>{(0,a.p)(E.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)}),this.importAggregator(e,()=>i.e(296).then(i.bind(i,9623)))}}new k({features:[R,T,j],loaderType:"lite"})})()})();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="cu2p3EoPQaAKSmuuUrqERLqLHlfDX9LSEAZndi9o">
+        <title>Download free SVG clip art and silhouettes for Cricut cutting
+machines.</title>
+
+        <!-- Meta -->
+      
+        <meta name="description" content="Download free SVG and PNG images with public domain license. Search our vast library of free vectors and enhance your
+designs.">
+        <meta name="author" content="Vedran">
+                  <link rel="stylesheet" href="/css/fontawesome6-pro-paid.min.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=YourFont:wght@400;700&display=swap" as="style">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=YourFont:wght@400;700&display=swap">
+          <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+         <link rel="stylesheet" href="/css/style.css">
+            
+          <!--     
+<script data-ad-client="ca-pub-4767662663033227" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+        <!-- Scripts -->
+        <script>
+            window.Laravel = {"csrfToken":"cu2p3EoPQaAKSmuuUrqERLqLHlfDX9LSEAZndi9o"}        </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147217457-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147217457-1');
+</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EM93X0EMX8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EM93X0EMX8');
+</script> 
+    </head>
+    <body id="app-layout">
+           <header class="header-navigation bg-white py-3 sticky-top">
+
+          
+
+            <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/upload/free_svg-logo.png" class="img-fluid d-lg-none" alt="Free SVG Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar"
+            aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="header-navbar">
+            <ul class="navbar-nav nav-fill w-100 align-self-center justify-content-center">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pages/about-us">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                <li class="nav-item d-none d-lg-inline-block">
+                    <a class="navbar-brand" href="/">
+                        <img src="/upload/free_svg-logo.png" class="img-fluid d-none d-lg-inline-block" alt="Free SVG Logo" />
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="https://forum.freesvg.org/">Forum</a></li>
+
+                                    <!-- User is NOT logged in -->
+                    <li class="nav-item"><a class="nav-link" href="https://freesvg.org/login">Login</a></li>
+
+                                            <li class="nav-item"><a class="nav-link" href="https://freesvg.org/register">Register</a></li>
+                                                </ul>
+        </div>
+    </div>
+</nav>
+            </header>
+                   
+                     <section class="main-section bg-light-grey">
+        <div class="container py-5">
+            <div class="w-lg mx-auto">
+                <h1 class="fw-bold mb-2 text-uppercase text-center">Free SVG vector files</h1>
+                <h5 class="fw-normal text-center mb-3">Download and upload SVG images with CC0 public domain license
+                </h5>
+  <form action="/search/" method="POST" >
+                <div class="search-bar bg-white px-3 py-3 p-md-2 rounded-3 mb-4 shadow-sm d-md-flex align-items-center">
+                    <div class="form-group flex-grow-1">
+                        <div class="input-group">
+                            <div class="search-icon input-group-text border-0 bg-transparent"><i
+                                    class="fa fa-search"></i></div>
+                          <input name="q" type="search" placeholder="Search here - 171,174 SVGs"
+                                class="form-control border-0 bg-transparent" aria-label="SVG Search"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+                
+                    <div class="form-group flex-shrink-0 d-flex justify-content-center align-items-center">
+                        <button type="submit"   class="btn btn-warning btn-lg w-100 w-md-inherit mt-3 mt-md-0">Browse
+                            SVGs</button>
+                    </div>
+                 <input type="hidden" name="_token" value="cu2p3EoPQaAKSmuuUrqERLqLHlfDX9LSEAZndi9o">                </div>
+                      </form>
+                <!-- text and tags -->
+                <div class="popular_tags text-center">
+                    <p class="m-0 d-inline-block">Popular SVG vectors:</p>
+                    <a class="rounded-3 bg-light-orange d-inline-block p-2 m-1" href="/tag/war">War</a>
+                    <a class="rounded-3 bg-light-orange d-inline-block p-2 m-1" href="/tag/peace">Peace</a>
+                    <a class="rounded-3 bg-light-orange d-inline-block p-2 m-1" href="/tag/cricut">Cricut svg</a>
+                    <a class="rounded-3 bg-light-orange d-inline-block p-2 m-1" href="/tag/ukraine">Ukraine</a>
+                    <a class="rounded-3 bg-light-orange d-inline-block p-2 m-1" href="/tag/love">Love</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-relative">
+           <img src="/upload/bg-banner-top-new.webp" width="1920" height="500" class="img-fluid w-100" alt="Free SVG Banner Image" load="lazy">
+        </div>
+         </section>
+    <section class="my-5 text-center">
+        <div class="container-fluid">
+            <h2> Visit SVG categories:</h2>
+            <div class="w-xl mx-auto my-4 tags-index">
+                                <a class="m-1 btn btn-light" href="/tag/abstract">abstract</a>
+                                <a class="m-1 btn btn-light" href="/tag/animal">animal</a>
+                                <a class="m-1 btn btn-light" href="/tag/art">art</a>
+                                <a class="m-1 btn btn-light" href="/tag/background">background</a>
+                                <a class="m-1 btn btn-light" href="/tag/black">black</a>
+                                <a class="m-1 btn btn-light" href="/tag/cartoon">cartoon</a>
+                                <a class="m-1 btn btn-light" href="/tag/Chromatic">Chromatic</a>
+                                <a class="m-1 btn btn-light" href="/tag/circle">circle</a>
+                                <a class="m-1 btn btn-light" href="/tag/clip art">clip art</a>
+                                <a class="m-1 btn btn-light" href="/tag/clip-art">clip-art</a>
+                                <a class="m-1 btn btn-light" href="/tag/clipart">clipart</a>
+                                <a class="m-1 btn btn-light" href="/tag/colorful">colorful</a>
+                                <a class="m-1 btn btn-light" href="/tag/decorative">decorative</a>
+                                <a class="m-1 btn btn-light" href="/tag/design">design</a>
+                                <a class="m-1 btn btn-light" href="/tag/drawing">drawing</a>
+                                <a class="m-1 btn btn-light" href="/tag/flag">flag</a>
+                                <a class="m-1 btn btn-light" href="/tag/floral">floral</a>
+                                <a class="m-1 btn btn-light" href="/tag/flower">flower</a>
+                                <a class="m-1 btn btn-light" href="/tag/font">font</a>
+                                <a class="m-1 btn btn-light" href="/tag/geometric">geometric</a>
+                                <a class="m-1 btn btn-light" href="/tag/graphics">graphics</a>
+                                <a class="m-1 btn btn-light" href="/tag/green">green</a>
+                                <a class="m-1 btn btn-light" href="/tag/icon">icon</a>
+                                <a class="m-1 btn btn-light" href="/tag/illustration">illustration</a>
+                                <a class="m-1 btn btn-light" href="/tag/leaf">leaf</a>
+                                <a class="m-1 btn btn-light" href="/tag/line">line</a>
+                                <a class="m-1 btn btn-light" href="/tag/line-art">line-art</a>
+                                <a class="m-1 btn btn-light" href="/tag/Logo">Logo</a>
+                                <a class="m-1 btn btn-light" href="/tag/pattern">pattern</a>
+                                <a class="m-1 btn btn-light" href="/tag/plant">plant</a>
+                                <a class="m-1 btn btn-light" href="/tag/rectangle">rectangle</a>
+                                <a class="m-1 btn btn-light" href="/tag/red">red</a>
+                                <a class="m-1 btn btn-light" href="/tag/silhouette">silhouette</a>
+                                <a class="m-1 btn btn-light" href="/tag/svg">svg</a>
+                                <a class="m-1 btn btn-light" href="/tag/symbol">symbol</a>
+                                <a class="m-1 btn btn-light" href="/tag/symmetry">symmetry</a>
+                                <a class="m-1 btn btn-light" href="/tag/text">text</a>
+                                <a class="m-1 btn btn-light" href="/tag/white">white</a>
+                                <a class="m-1 btn btn-light" href="/tag/yellow">yellow</a>
+                                <a class="m-1 btn btn-light" href="/tag/black-and-white">black and white</a>
+                               
+            </div>
+        </div>
+    </section>
+               
+                        
+ 
+ 
+ 
+                       
+          
+  
+
+             <section class="mt-5 text-center">
+        <div class="container">
+            <h2>Latest SVG clipart</h2>
+      <div class="row row-cols-sm-4 row-cols-lg-5 my-4">  
+                      
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/quality-assurance-concept">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/software-testing-q-a_1770914087.png"  alt="Quality assurance concept"  title="Quality assurance concept" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/quality-assurance-concept">Quality assurance concept</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/growing-potatoes">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/potato-vegetable_1770913965.png"  alt="Growing potatoes"  title="Growing potatoes" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/growing-potatoes">Growing potatoes</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/drugs-and-medicine-concept">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/pills-drugs-medicine_1770913868.png"  alt="Drugs and medicine concept"  title="Drugs and medicine concept" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/drugs-and-medicine-concept">Drugs and medicine concept</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/a-pelican">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/pelican_1770913743.png"  alt="A pelican"  title="A pelican" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/a-pelican">A pelican</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/spotlight-1770887629">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Spotlight_1770887629.png"  alt="Spotlight-1770887629"  title="Spotlight-1770887629" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/spotlight-1770887629">Spotlight-1770887629</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dividing-words">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Deviding words_1770887417.png"  alt="Dividing words"  title="Dividing words" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dividing-words">Dividing words</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/alakazam">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Alakazam wizard_1770887155.png"  alt="Alakazam"  title="Alakazam" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/alakazam">Alakazam</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/teapot-5">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Teapot5_1770875498.png"  alt="Teapot 5"  title="Teapot 5" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/teapot-5">Teapot 5</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/visual-artist-v">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Visual_artist_V_1770875329.png"  alt="Visual artist V"  title="Visual artist V" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/visual-artist-v">Visual artist V</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/visual-artist-iv">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Visual_artist_IV_1770875161.png"  alt="Visual artist IV"  title="Visual artist IV" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/visual-artist-iv">Visual artist IV</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/visual-artist-iii">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Visual_artist_III_1770875019.png"  alt="Visual artist III"  title="Visual artist III" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/visual-artist-iii">Visual artist III</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/visual-artist-ii">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Visual_artist_II_1770874891.png"  alt="Visual artist II"  title="Visual artist II" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/visual-artist-ii">Visual artist II</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/visual-artist-i">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Visual_artist_I_1770874602.png"  alt="Visual artist I"  title="Visual artist I" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/visual-artist-i">Visual artist I</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/the-old-man-sleeps-by-the-stove">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/The_old_man_sleeps_by_the_stove_1770874481.png"  alt="The old man sleeps by the stove"  title="The old man sleeps by the stove" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/the-old-man-sleeps-by-the-stove">The old man sleeps by the stove</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/gold-bars-1770837415">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/gold-bars_1770837415.png"  alt="Gold bars-1770837415"  title="Gold bars-1770837415" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/gold-bars-1770837415">Gold bars-1770837415</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/foliage-leaves-and-branches">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/foliage-background-pattern_1770837313.png"  alt="Foliage leaves and branches"  title="Foliage leaves and branches" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/foliage-leaves-and-branches">Foliage leaves and branches</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/numbers-pattern">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/binary-numbers-pattern_1770837253.png"  alt="Numbers pattern"  title="Numbers pattern" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/numbers-pattern">Numbers pattern</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/abstract-colored-shapes">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/abstract-colored-shapes-bkg_1770837192.png"  alt="Abstract colored shapes"  title="Abstract colored shapes" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/abstract-colored-shapes">Abstract colored shapes</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/baby-elephant-1770825076">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Baby elephant_1770825076.png"  alt="Baby elephant-1770825076"  title="Baby elephant-1770825076" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/baby-elephant-1770825076">Baby elephant-1770825076</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/crazy-cartoon-row">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Crazy cartoon row_1770824932.png"  alt="Crazy cartoon row"  title="Crazy cartoon row" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/crazy-cartoon-row">Crazy cartoon row</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/cool-sopranosax-player">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Cool soprano saxplayer_1770824773.png"  alt="Cool sopranosax player"  title="Cool sopranosax player" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/cool-sopranosax-player">Cool sopranosax player</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/chefs-skull">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Chef-skull_1770790036.png"  alt="Chef&#039;s skull"  title="Chef&#039;s skull" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/chefs-skull">Chef&#039;s skull</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/bat-4">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Bat4_1770789926.png"  alt="Bat 4"  title="Bat 4" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/bat-4">Bat 4</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/boat-79">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Boat79_1770789795.png"  alt="Boat 79"  title="Boat 79" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/boat-79">Boat 79</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/mythical-creature-half-man-and-half-bull-3">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Mythical_creature_half_man_and_half_bull_3_1770789696.png"  alt="Mythical creature: half man and half bull 3"  title="Mythical creature: half man and half bull 3" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/mythical-creature-half-man-and-half-bull-3">Mythical creature: half man and half bull 3</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/a-stork-takes-off-from-its-nest-at-the-top-of-an-old-tree">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/A_stork_takes_off_from_its_nest_at_the_top_of_an_old_tree_1770789495.png"  alt="A stork takes off from its nest at the top of an old tree"  title="A stork takes off from its nest at the top of an old tree" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/a-stork-takes-off-from-its-nest-at-the-top-of-an-old-tree">A stork takes off from its nest at the top of an old tree</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/apple-on-the-pile-of-books">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/worm-apple-and-books_1770750885.png"  alt="Apple on the pile of books"  title="Apple on the pile of books" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/apple-on-the-pile-of-books">Apple on the pile of books</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/wooden-treasure-chest-1770750792">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/wooden-treasure-chest_1770750792.png"  alt="Wooden treasure chest-1770750792"  title="Wooden treasure chest-1770750792" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/wooden-treasure-chest-1770750792">Wooden treasure chest-1770750792</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/traffic-signals">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/traffic-lights-green-red-yellow_1770750690.png"  alt="Traffic signals"  title="Traffic signals" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/traffic-signals">Traffic signals</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/teacher-giving-a-lecture">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/teacher-giving-a-lecture_1770750602.png"  alt="Teacher giving a lecture"  title="Teacher giving a lecture" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/teacher-giving-a-lecture">Teacher giving a lecture</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/skeptical-woman-4">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Skeptical_woman_4_1770724248.png"  alt="Skeptical woman 4"  title="Skeptical woman 4" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/skeptical-woman-4">Skeptical woman 4</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/nostradamus">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Nostradamus_1770724051.png"  alt="Nostradamus"  title="Nostradamus" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/nostradamus">Nostradamus</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/jumping-plant">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Jumping_plant_1770723884.png"  alt="Jumping plant"  title="Jumping plant" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/jumping-plant">Jumping plant</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/theseus">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Theseus_I_1770723671.png"  alt="Theseus"  title="Theseus" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/theseus">Theseus</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/greek-god-pan">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Greek-god-Pan_1737538743.png"  alt="Greek god Pan"  title="Greek god Pan" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/greek-god-pan">Greek god Pan</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/greek-god-atlas-3">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Greek-god-Atlas-3_1754758465.png"  alt="Greek god Atlas 3"  title="Greek god Atlas 3" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/greek-god-atlas-3">Greek god Atlas 3</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/greek-god-atlas-2">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Greek-god-Atlas-2_1736488819.png"  alt="Greek god Atlas 2"  title="Greek god Atlas 2" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/greek-god-atlas-2">Greek god Atlas 2</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/greek-god-atlas">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/1710050171Greek-god-Atlas-1b.png"  alt="Greek god Atlas"  title="Greek god Atlas" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/greek-god-atlas">Greek god Atlas</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/a-masked-professional-wrestler">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/1715866573A-masked-professional-wrestler.png"  alt="A masked professional wrestler"  title="A masked professional wrestler" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/a-masked-professional-wrestler">A masked professional wrestler</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/gorgon">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Gorgon-I_1761652080.png"  alt="Gorgon"  title="Gorgon" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/gorgon">Gorgon</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/cerberus-iii">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Cerberus_III_1768206620.png"  alt="Cerberus III"  title="Cerberus III" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/cerberus-iii">Cerberus III</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/cerberus-ii">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Cerberus_II_1768206174.png"  alt="Cerberus II"  title="Cerberus II" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/cerberus-ii">Cerberus II</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/cerberus-i">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Cerberus_1726232584.png"  alt="Cerberus I"  title="Cerberus I" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/cerberus-i">Cerberus I</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/the-fight-of-heracles-with-the-nemean-lion">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/1714746463The-fight-of-Heracles-with-the-Nemean-lion.png"  alt="The fight of Heracles with the Nemean lion"  title="The fight of Heracles with the Nemean lion" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/the-fight-of-heracles-with-the-nemean-lion">The fight of Heracles with the Nemean lion</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/spinning-basketball">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/spinning-basketball-ball_1770658847.png"  alt="Spinning basketball"  title="Spinning basketball" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/spinning-basketball">Spinning basketball</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/red-lips-and-teeth">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/smiling-red-lips_1770658788.png"  alt="Red lips and teeth"  title="Red lips and teeth" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/red-lips-and-teeth">Red lips and teeth</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/red-curtains">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/red-drapes_1770658736.png"  alt="Red curtains"  title="Red curtains" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/red-curtains">Red curtains</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/a-railway-tunnel">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/railroad-tunnel_1770658658.png"  alt="A railway tunnel"  title="A railway tunnel" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/a-railway-tunnel">A railway tunnel</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/man-and-woman-5">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Man_and_woman_5_1770635464.png"  alt="Man and woman 5"  title="Man and woman 5" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/man-and-woman-5">Man and woman 5</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/horses-by-a-lake">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Horses_by_a_lake_1770635332.png"  alt="Horses by a lake"  title="Horses by a lake" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/horses-by-a-lake">Horses by a lake</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/jesus-christ-on-the-cross-with-the-apostle-john-kneeling-at-his-feet">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Jesus_Christ_on_the_cross_with_the_apostle_John_kneeling_at_his_feet_1770635152.png"  alt="Jesus Christ on the cross with the apostle John kneeling at his feet"  title="Jesus Christ on the cross with the apostle John kneeling at his feet" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/jesus-christ-on-the-cross-with-the-apostle-john-kneeling-at-his-feet">Jesus Christ on the cross with the apostle John kneeling at his feet</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/portrait-of-elise-kobke">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Portrait_of_Elise_K_1770634949.png"  alt="Portrait of Elise Købke"  title="Portrait of Elise Købke" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/portrait-of-elise-kobke">Portrait of Elise Købke</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/guardian-angel-sitting-on-the-bed-of-a-sick-child">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Guardian_angel_sitting_on_the_bed_of_a_sick_child_1770634798.png"  alt="Guardian angel sitting on the bed of a sick child"  title="Guardian angel sitting on the bed of a sick child" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/guardian-angel-sitting-on-the-bed-of-a-sick-child">Guardian angel sitting on the bed of a sick child</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/singer-1770627075">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Singer in lip dress_1770627075.png"  alt="Singer-1770627075"  title="Singer-1770627075" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/singer-1770627075">Singer-1770627075</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/sausage-monster">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Susage monster_1770626970.png"  alt="Sausage monster"  title="Sausage monster" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/sausage-monster">Sausage monster</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/i-dont-know">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Donno_1770553073.png"  alt="I don&#039;t know"  title="I don&#039;t know" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/i-dont-know">I don&#039;t know</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/ready-for-takeoff">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Ready for takeoff_1770552912.png"  alt="Ready for takeoff"  title="Ready for takeoff" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/ready-for-takeoff">Ready for takeoff</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/shake-it-baby">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Shake it baby_1770552773.png"  alt="Shake it baby!"  title="Shake it baby!" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/shake-it-baby">Shake it baby!</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/plant-4">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Plant4_1770532555.png"  alt="Plant 4"  title="Plant 4" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/plant-4">Plant 4</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/red-plant">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Red_plant_I_1770532477.png"  alt="Red plant"  title="Red plant" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/red-plant">Red plant</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/leaf-16">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Leaf16_1770532412.png"  alt="Leaf 16"  title="Leaf 16" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/leaf-16">Leaf 16</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/plants-that-glow-at-night">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Plants_that_glow_at_night_1770532330.png"  alt="Plants that glow at night"  title="Plants that glow at night" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/plants-that-glow-at-night">Plants that glow at night</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-7">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer7_1768026236.png"  alt="Dancer 7"  title="Dancer 7" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-7">Dancer 7</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-6">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer6_1767858911.png"  alt="Dancer 6"  title="Dancer 6" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-6">Dancer 6</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-5">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer5_1766476709.png"  alt="Dancer 5"  title="Dancer 5" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-5">Dancer 5</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-4">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer4_1763800126.png"  alt="Dancer 4"  title="Dancer 4" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-4">Dancer 4</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-3">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer3_1762494693.png"  alt="Dancer 3"  title="Dancer 3" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-3">Dancer 3</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-2">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer2_1758083542.png"  alt="Dancer 2"  title="Dancer 2" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-2">Dancer 2</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/dancer-1">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Dancer1_1744630389.png"  alt="Dancer 1"  title="Dancer 1" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/dancer-1">Dancer 1</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/flowers-16">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Flowers16_1770431755.png"  alt="Flowers 16"  title="Flowers 16" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/flowers-16">Flowers 16</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/peacock-vi">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Peacock_VI_1770431669.png"  alt="Peacock VI"  title="Peacock VI" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/peacock-vi">Peacock VI</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/flowers-15">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Flowers15_1770431569.png"  alt="Flowers 15"  title="Flowers 15" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/flowers-15">Flowers 15</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/illustration-from-books-x">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Illustration_from_books_X_1770431464.png"  alt="Illustration from books X"  title="Illustration from books X" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/illustration-from-books-x">Illustration from books X</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/ancient-woman-5">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Ancient_woman_5_1770431271.png"  alt="Ancient woman 5"  title="Ancient woman 5" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/ancient-woman-5">Ancient woman 5</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/ladies-women-girls-2">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Ladies-women-girls-2_1725883365.png"  alt="Ladies, women, girls 2"  title="Ladies, women, girls 2" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/ladies-women-girls-2">Ladies, women, girls 2</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/ladies-women-girls-1">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/Ladies-women-girls-1_1725882778.png"  alt="Ladies, women, girls 1"  title="Ladies, women, girls 1" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/ladies-women-girls-1">Ladies, women, girls 1</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/party-horns">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/party-colorful-horns_1770403886.png"  alt="Party horns"  title="Party horns" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/party-horns">Party horns</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/a-padlock-with-chains">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/padlock-with-golden-chain_1770403787.png"  alt="A padlock with chains"  title="A padlock with chains" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/a-padlock-with-chains">A padlock with chains</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/open-windows-1770403708">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/open-window_1770403708.png"  alt="Open windows-1770403708"  title="Open windows-1770403708" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/open-windows-1770403708">Open windows-1770403708</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="svg-image-box mb-4">
+                        <a href="https://freesvg.org/traditional-wired-telephone">
+                            <div class="ratio ratio-1x1">
+                                                                                          <img src="/storage/img/thumb/landline-phone_1770403581.png"  alt="Traditional wired telephone"  title="Traditional wired telephone" loading="lazy">
+                                                                                      </div>
+                        </a>
+                        <div class="text-start p-2 position-absolute bottom-0 start-0">
+                            <a class="btn btn-warning" href="https://freesvg.org/traditional-wired-telephone">Traditional wired telephone</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                                        
+
+            </div>
+
+           <div class="row">
+              <div class="col-12 d-flex justify-content-center py-5">
+                  <ul class="pagination">
+        <!-- Previous Page Link -->
+                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+        
+        <!-- Pagination Elements -->
+                    <!-- "Three Dots" Separator -->
+            
+            <!-- Array Of Links -->
+                                                                        <li class="page-item active"><span class="page-link">1</span></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://freesvg.org?page=2">2</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://freesvg.org?page=3">3</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://freesvg.org?page=4">4</a></li>
+                                                                    <!-- "Three Dots" Separator -->
+                            <li class="page-item disabled"><span class="page-link">...</span></li>
+            
+            <!-- Array Of Links -->
+                                <!-- "Three Dots" Separator -->
+            
+            <!-- Array Of Links -->
+                                                                        <li class="page-item"><a class="page-link" href="https://freesvg.org?page=2137">2137</a></li>
+                                                                                <li class="page-item"><a class="page-link" href="https://freesvg.org?page=2138">2138</a></li>
+                                                        
+        <!-- Next Page Link -->
+                    <li class="page-item"><a class="page-link" href="https://freesvg.org?page=2" rel="next">&raquo;</a></li>
+            </ul>
+
+              </div>
+          </div>
+
+    
+        </div>
+    </section>
+      <section>
+        <div class="position-relative">
+            <img src="/upload/bg-banner-trees.webp" class="img-fluid w-100 hm-150" alt="Free SVG Tree Banner Image">
+        </div>
+        <div class="bg-warning pb-5">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Our SVG library stats:</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="bs-icon-with-text d-flex mb-4">
+                            <div class="flex-shrink-0 pe-3">
+                                <div class="bs-icon-x4">
+                                    <i class="far fa-user-plus"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bs-text">
+                                <div class="fs-3 fw-bold"> 171,174 </div>
+                                <p>Free SVG vectors</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="bs-icon-with-text d-flex mb-4">
+                            <div class="flex-shrink-0 pe-3">
+                                <div class="bs-icon-x4">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bs-text">
+                                <div class="fs-3 fw-bold"> 10,633 </div>
+                                <p>Members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="bs-icon-with-text d-flex mb-4">
+                            <div class="flex-shrink-0 pe-3">
+                                <div class="bs-icon-x4">
+                                    <i class="far fa-download"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bs-text">
+                                <div class="fs-3 fw-bold"> 211,399,890 </div>
+                                <p>Downloads</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="bs-icon-with-text d-flex mb-4">
+                            <div class="flex-shrink-0 pe-3">
+                                <div class="bs-icon-x4">
+                                    <i class="far fa-refresh"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 bs-text">
+                                <div class="fs-3 fw-bold">14 </div>
+                                <p>New SVG files today</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>      <section class="images my-4 py-2">
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center slider-row">
+                <div class="col-md-3">
+                    <img src="/img/shutterstocklogo.png" alt="Shutterstock logo" class="img-fluid" loading="lazy">
+                    <h5 class="fw-500 text-uppercase mt-3 break-word"><a href="https://shutterstock.7eer.net/c/2022575/1424089/1305" rel="sponsored"   id="1424089" >
+                      <span style="text-decoration: underline; color: inherit;">Get 15% off </span>at Shutterstock! <br/> Use: FSVG15 at checkout!</a>
+                    </h5>
+                </div>
+                <div class="image-container col-md-9 mt-3 mt-md-0">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper" id="data-container">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>                 
+      
+                    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row align-items-top gy-3">
+                <div class="col-md-4">
+                    <div class="mb-4"><a href="index.html"><img alt="Free SVG Logo Image"
+                                src="/upload/white-free_svg-logo.png" loading="lazy"
+                                class="img-fluid navbar-brand footer-logo"></a>
+                    </div>
+                    <p class="pe-lg-3">FreeSVG.org offers free vector images in SVG format with Creative Commons 0
+                        license (public domain). You can copy, modify, distribute and perform the work, even for
+                        commercial purposes, all without asking permission.<br /><br />It is absolutely not required,
+                        but if you like this website, any mention of or link back is highly appreciated.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="mb-4 text-uppercase">USEFUL LINKS</h5>
+                            <div class="mb-4">
+                              
+                                <p class="mb-1"><a class="nav-link" rel="nofollow" href="http://inkscape.org/">Inkscape</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow" href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics">What is SVG</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow" href="https://svgedit.netlify.app/editor/index.html">SVG Edit</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow"  href="http://www.drawsvg.org/drawsvg.html">Draw SVG</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow"  href="http://www.w3.org/Graphics/SVG/">SVG Logo</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <h5 class="mb-4 text-uppercase">SITE LINKS</h5>
+                            <div class="mb-4">
+                                <p class="mb-1"><a class="nav-link" href="/">Home</a></p>
+                                <p class="mb-1"><a class="nav-link" href="/pages/about-us">About</a></p>
+                                <p class="mb-1"><a class="nav-link" href="/contact">Contact</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow" href="https://creativecommons.org/publicdomain/zero/1.0/ " target="_blank">Public domain license</a></p>
+                                <p class="mb-1"><a class="nav-link" rel="nofollow" href="https://forum.freesvg.org " target="_blank">Forum</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-4">
+  <a rel="sponsored" href="https://shutterstock.7eer.net/c/2022575/920029/1305" target="_blank" id="920029"><img src="//a.impactradius-go.com/display-ad/1305-920029" border="0" alt="" width="300" height="250"/></a><img height="0" width="0" src="https://shutterstock.7eer.net/i/2022575/920029/1305" style="position:absolute;visibility:hidden;" border="0" />
+   
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-md-start clearfix">
+                <p class="float-md-start text mb-0 pb-2"><span class="text-warning">Free SVG</span> 2019-
+                    <script>document.write(new Date().getFullYear())</script>
+                </p>
+                <p class="text-center float-md-end mb-0 pb-2 small"><a href="/pages/api-and-usage">API
+                    </a> &nbsp; <a href="/pages/terms-and-conditions">Terms and conditions</a> &nbsp; <a href="/pages/privacy-policy">Privacy Policy</a></p>
+            </div>
+        </div>
+          </footer>        
+                <script>
+            const apiUrl = `https://freesvg.org//get-images/cat`;
+            const apiUrl2 = `https://freesvg.org//get-images/cat`;
+        </script>
+            <!-- Scripts -->
+         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/index.js"></script>
+        
+              <div class="js-cookie-consent cookie-consent">
+
+    <span class="cookie-consent__message">
+        Your experience on this site will be improved by allowing cookies.
+    </span>
+
+    <button class="js-cookie-consent-agree cookie-consent__agree btn btn-green btn-lg">
+        Allow cookies
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'freesvg.org';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+
+     <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-15417342d295584c702","applicationID":"525287958","transactionName":"ZgMAZUFTWUJTUhcIXl9JI1JHW1hfHVcRDl9FAwxVHVpYXFc=","queueTime":0,"applicationTime":84,"atts":"SkQDEwlJSkw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

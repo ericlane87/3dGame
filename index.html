@@ -16,11 +16,31 @@
       </div>
       <div id="objective">Objective: Find the scientist.</div>
       <div id="hint">Click to lock mouse. WASD to move. Tap Shoot on mobile.</div>
+      <div id="workbench-prompt" class="hidden">Press E to use workbench</div>
       <div id="noise">
         <span>Noise</span>
         <div id="noise-bar"><div id="noise-fill"></div></div>
       </div>
       <div id="crosshair">+</div>
+    </div>
+
+    <div id="workbench-overlay" class="hidden">
+      <div class="workbench-scene">
+        <div class="bench-light">
+          <img id="bench-switch" src="assets/ui/hand_switch.png" alt="Switch hand" />
+          <div class="bench-light-glow"></div>
+          <div class="bench-label">Workbench</div>
+        </div>
+        <div class="bench-panel hidden" id="bench-panel">
+          <img id="bench-gun" src="assets/ui/gun_side.png" alt="Gun" />
+          <div class="bench-options">
+            <button>Damage +</button>
+            <button>Accuracy +</button>
+            <button>Reload +</button>
+          </div>
+        </div>
+        <button id="bench-close">Close</button>
+      </div>
     </div>
 
     <div id="map-modal" class="hidden">

@@ -36,6 +36,10 @@ const ui = {
   noiseFill: document.getElementById("noise-fill"),
   hint: document.getElementById("hint"),
   crosshair: document.getElementById("crosshair"),
+  workbenchPrompt: document.getElementById("workbench-prompt"),
+  workbenchOverlay: document.getElementById("workbench-overlay"),
+  workbenchPanel: document.getElementById("bench-panel"),
+  workbenchClose: document.getElementById("bench-close"),
   mapModal: document.getElementById("map-modal"),
   mapClose: document.getElementById("close-map"),
   mapButtons: document.querySelectorAll(".map-buttons button"),
@@ -61,6 +65,7 @@ const player = {
   runSpeed: 9,
   noise: 0,
   inGarage: true,
+  inMenu: false,
   exploredStore: false,
   returnedToBase: false,
   objectiveComplete: false,
@@ -183,10 +188,12 @@ function addGaragePropPlane(textureUrl, position, size, rotationY = 0) {
   garageProps.push(mesh);
 }
 
+const workbenchPosition = new THREE.Vector3(-4.7, 1.4, -6.7);
+
 addGaragePropPlane(
-  "assets/garage/workbench.jpg",
-  new THREE.Vector3(-4.7, 1.4, -6.7),
-  [3.8, 2.2],
+  "assets/garage/workbench.png",
+  workbenchPosition,
+  [3.6, 2.1],
   Math.PI * 0.1
 );
 setGaragePropsVisible(true);
@@ -306,7 +313,7 @@ function updateUI() {
 }
 
 function shoot() {
-  if (!player.canShoot || player.health <= 0) return;
+  if (!player.canShoot || player.health <= 0 || player.inMenu) return;
   player.canShoot = false;
   setTimeout(() => {
     player.canShoot = true;
@@ -359,6 +366,8 @@ const keyUpMap = {
 window.addEventListener("keydown", (event) => {
   if (keyMap[event.code]) keyMap[event.code]();
   if (event.code === "KeyM") openMap();
+  if (event.code === "KeyE") tryOpenWorkbench();
+  if (event.code === "Escape") closeWorkbench();
 });
 
 window.addEventListener("keyup", (event) => {
@@ -405,6 +414,7 @@ window.addEventListener("mousemove", (event) => {
 
 ui.shootBtn.addEventListener("click", shoot);
 ui.mapBtn.addEventListener("click", openMap);
+ui.workbenchClose.addEventListener("click", closeWorkbench);
 
 let stickActive = false;
 let stickOrigin = { x: 0, y: 0 };
@@ -491,6 +501,7 @@ ui.mapButtons.forEach((btn) => {
 });
 
 function updatePlayer(dt) {
+  if (player.inMenu) return;
   const speed = input.run ? player.runSpeed : player.speed;
   const moveX = isMobile ? stickValue.x : input.right;
   const moveZ = isMobile ? -stickValue.y : input.forward;
@@ -592,6 +603,42 @@ function updateProgression() {
   }
 }
 
+function updateWorkbenchPrompt() {
+  if (!player.inGarage || player.inMenu) {
+    ui.workbenchPrompt.classList.add("hidden");
+    return;
+  }
+  const dist = player.object.position.distanceTo(workbenchPosition);
+  if (dist < 3) {
+    ui.workbenchPrompt.classList.remove("hidden");
+  } else {
+    ui.workbenchPrompt.classList.add("hidden");
+  }
+}
+
+function tryOpenWorkbench() {
+  if (!player.inGarage || player.inMenu) return;
+  const dist = player.object.position.distanceTo(workbenchPosition);
+  if (dist > 3) return;
+  player.inMenu = true;
+  ui.workbenchOverlay.classList.remove("hidden");
+  ui.workbenchPanel.classList.add("hidden");
+  ui.workbenchOverlay.classList.remove("on");
+  ui.crosshair.style.display = "none";
+  setTimeout(() => {
+    ui.workbenchOverlay.classList.add("on");
+    ui.workbenchPanel.classList.remove("hidden");
+  }, 450);
+}
+
+function closeWorkbench() {
+  if (!player.inMenu) return;
+  player.inMenu = false;
+  ui.workbenchOverlay.classList.add("hidden");
+  ui.workbenchOverlay.classList.remove("on");
+  ui.crosshair.style.display = "";
+}
+
 function resize() {
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -612,6 +659,7 @@ function animate(now) {
   updateZombies(dt);
   updatePickups();
   updateProgression();
+  updateWorkbenchPrompt();
   updateUI();
 
   renderer.render(scene, camera);
@@ -620,6 +668,6 @@ function animate(now) {
 
 ui.hint.textContent = isMobile
   ? "Use the joystick to move. Drag right side to look. Tap Shoot."
-  : "Move: WASD or arrows. Aim with cursor. Left click to shoot. Right drag to look. M for map.";
+  : "Move: WASD or arrows. Aim with cursor. Left click to shoot. Right drag to look. E for workbench. M for map.";
 
 requestAnimationFrame(animate);
