@@ -189,18 +189,6 @@ addGaragePropPlane(
   [3.8, 2.2],
   Math.PI * 0.1
 );
-addGaragePropPlane(
-  "assets/garage/shelves.jpg",
-  new THREE.Vector3(6.4, 1.8, -6.0),
-  [3.6, 2.6],
-  -Math.PI * 0.1
-);
-addGaragePropPlane(
-  "assets/garage/crates.jpg",
-  new THREE.Vector3(4.2, 1.0, 4.8),
-  [2.6, 1.8],
-  -Math.PI * 0.25
-);
 setGaragePropsVisible(true);
 
 const store = new THREE.Mesh(
