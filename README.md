@@ -31,7 +31,7 @@ Mobile:
 
 - Garage safe house, neighborhood, and outskirts
 - Basic handgun shooting
-- Zombies with vision cone + sound radius (2D sprite placeholder)
+- Zombies with vision cone + sound radius (2D sprite placeholder with front/back)
 - Pickups: food and med
 - Resource storage at base
 - Map travel to unlocked location

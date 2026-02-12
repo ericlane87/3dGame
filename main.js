@@ -149,11 +149,13 @@ for (let i = 0; i < 6; i += 1) {
 addPickup("med", new THREE.Vector3(92, 0.5, -12));
 
 const zombies = [];
-const zombieTexture = new THREE.TextureLoader().load("assets/zombies/Zombi.webp");
-zombieTexture.flipY = false;
+const zombieFrontTexture = new THREE.TextureLoader().load("assets/zombies/zombie_front.webp");
+const zombieBackTexture = new THREE.TextureLoader().load("assets/zombies/zombie_back.jpg");
+zombieFrontTexture.flipY = false;
+zombieBackTexture.flipY = false;
 
 function addZombie(position, location) {
-  const material = new THREE.SpriteMaterial({ map: zombieTexture, transparent: true });
+  const material = new THREE.SpriteMaterial({ map: zombieFrontTexture, transparent: true });
   const sprite = new THREE.Sprite(material);
   sprite.position.copy(position);
   sprite.position.y = 1.6;
@@ -161,6 +163,7 @@ function addZombie(position, location) {
   scene.add(sprite);
   zombies.push({
     mesh: sprite,
+    material,
     health: 40,
     speed: 1.4,
     state: "idle",
@@ -169,6 +172,7 @@ function addZombie(position, location) {
     visionRange: 14,
     fov: Math.PI * 0.55,
     bobTime: Math.random() * Math.PI * 2,
+    facing: new THREE.Vector3(0, 0, 1),
   });
 }
 
@@ -429,10 +433,13 @@ function updateZombies(dt) {
     if (zombie.state === "chase") {
       const move = toPlayerDir.multiplyScalar(zombie.speed * dt);
       zombie.mesh.position.add(move);
+      zombie.facing.copy(toPlayerDir);
     }
 
     zombie.bobTime += dt * 6;
     zombie.mesh.position.y = 1.6 + Math.sin(zombie.bobTime) * 0.05;
+    const viewDot = zombie.facing.dot(toPlayerDir);
+    zombie.material.map = viewDot < 0 ? zombieBackTexture : zombieFrontTexture;
 
     zombie.attackCooldown -= dt;
     if (dist < 1.4 && zombie.attackCooldown <= 0 && !player.inGarage) {
