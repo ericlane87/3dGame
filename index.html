@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Hood Chronicles 3D</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="ui">
+      <div id="topbar">
+        <div class="pill" id="health">Health: 100</div>
+        <div class="pill" id="food">Food: 0</div>
+        <div class="pill" id="storage">Storage: 0</div>
+        <div class="pill" id="location">Location: Garage</div>
+      </div>
+      <div id="objective">Objective: Find the scientist.</div>
+      <div id="hint">Click to lock mouse. WASD to move. Tap Shoot on mobile.</div>
+      <div id="noise">
+        <span>Noise</span>
+        <div id="noise-bar"><div id="noise-fill"></div></div>
+      </div>
+      <div id="crosshair">+</div>
+    </div>
+
+    <div id="map-modal" class="hidden">
+      <div class="modal">
+        <h2>Map</h2>
+        <p>Select a location to travel by car.</p>
+        <div class="map-buttons">
+          <button data-loc="neighborhood">Neighborhood (Unlocked)</button>
+          <button data-loc="outskirts" disabled id="outskirts-btn">Outskirts (Locked)</button>
+        </div>
+        <button id="close-map">Close</button>
+      </div>
+    </div>
+
+    <div id="mobile-controls" class="hidden">
+      <div id="move-stick" class="stick">
+        <div class="stick-knob"></div>
+      </div>
+      <button id="shoot-btn">Shoot</button>
+      <button id="map-btn">Map</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

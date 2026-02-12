@@ -1,0 +1,199 @@
+:root {
+  --bg: #0c0f10;
+  --ui: #10161b;
+  --accent: #e7b866;
+  --danger: #e25b5b;
+  --text: #e6eef5;
+  --muted: #93a4b2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+#ui {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#topbar {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+}
+
+.pill {
+  background: rgba(16, 22, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+#objective {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+#hint {
+  position: absolute;
+  bottom: 18px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#noise {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#noise-bar {
+  width: 120px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+#noise-fill {
+  height: 100%;
+  width: 10%;
+  background: var(--accent);
+  transition: width 0.1s ease;
+}
+
+#crosshair {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#map-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+#map-modal.hidden {
+  display: none;
+}
+
+.modal {
+  background: var(--ui);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  width: min(90vw, 420px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal h2 {
+  margin: 0 0 8px;
+}
+
+.map-buttons {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+button {
+  background: var(--accent);
+  color: #1b1b1b;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#mobile-controls {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#mobile-controls.hidden {
+  display: none;
+}
+
+#move-stick {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+}
+
+.stick-knob {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 36px;
+  top: 36px;
+}
+
+#shoot-btn {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  pointer-events: auto;
+}
+
+#map-btn {
+  position: absolute;
+  bottom: 90px;
+  right: 32px;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  #hint {
+    display: none;
+  }
+}
