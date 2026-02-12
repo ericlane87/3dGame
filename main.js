@@ -88,6 +88,11 @@ const locations = {
 };
 
 let currentLocation = "garage";
+function setGaragePropsVisible(visible) {
+  for (const prop of garageProps) {
+    prop.visible = visible;
+  }
+}
 
 const groundMat = new THREE.MeshStandardMaterial({ color: 0x1a2227 });
 const groundGeo = new THREE.PlaneGeometry(600, 600);
@@ -108,6 +113,42 @@ const garageDoor = new THREE.Mesh(
 );
 garageDoor.position.set(0, 1.5, 9);
 scene.add(garageDoor);
+
+function makeLabelSprite(text, bgColor, textColor = "#f0f4f8") {
+  const canvas = document.createElement("canvas");
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillRect(0, canvas.height * 0.6, canvas.width, canvas.height * 0.4);
+  ctx.fillStyle = textColor;
+  ctx.font = "bold 32px sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+  const texture = new THREE.CanvasTexture(canvas);
+  return new THREE.SpriteMaterial({ map: texture, transparent: true });
+}
+
+const garageProps = [];
+function addGarageProp(label, color, position, scale = [2.2, 2.2, 1]) {
+  const material = makeLabelSprite(label, color);
+  const sprite = new THREE.Sprite(material);
+  sprite.position.set(position.x, position.y, position.z);
+  sprite.scale.set(scale[0], scale[1], scale[2]);
+  scene.add(sprite);
+  garageProps.push(sprite);
+}
+
+addGarageProp("WORKBENCH", "#4b5561", new THREE.Vector3(-4.5, 1.2, -6), [3.2, 2.2, 1]);
+addGarageProp("TOOLS", "#2f4858", new THREE.Vector3(-6.5, 2.0, -4), [2.2, 1.8, 1]);
+addGarageProp("SHELVES", "#3f3a30", new THREE.Vector3(5.8, 1.8, -5.5), [2.6, 2.6, 1]);
+addGarageProp("SUPPLIES", "#4a3f2f", new THREE.Vector3(6.5, 0.9, -2.5), [2.0, 1.6, 1]);
+addGarageProp("CRATES", "#5a4630", new THREE.Vector3(4.5, 0.8, 4.5), [2.0, 1.6, 1]);
+addGarageProp("GAUGES", "#3b4f4a", new THREE.Vector3(-5.5, 2.2, 3.5), [1.6, 1.6, 1]);
+setGaragePropsVisible(true);
 
 const store = new THREE.Mesh(
   new THREE.BoxGeometry(16, 5, 12),
@@ -192,6 +233,7 @@ function setLocation(name) {
   const loc = locations[name];
   player.object.position.set(loc.center.x, 1.6, loc.center.z + 2);
   ui.location.textContent = `Location: ${loc.name}`;
+  setGaragePropsVisible(name === "garage");
 
   if (name === "outskirts") {
     scientist.visible = true;
