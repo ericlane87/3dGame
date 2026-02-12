@@ -35,6 +35,7 @@ const ui = {
   objective: document.getElementById("objective"),
   noiseFill: document.getElementById("noise-fill"),
   hint: document.getElementById("hint"),
+  crosshair: document.getElementById("crosshair"),
   mapModal: document.getElementById("map-modal"),
   mapClose: document.getElementById("close-map"),
   mapButtons: document.querySelectorAll(".map-buttons button"),
@@ -78,6 +79,11 @@ const input = {
   forward: 0,
   right: 0,
   run: false,
+};
+
+const mouse = {
+  x: 0.5,
+  y: 0.5,
 };
 
 const locations = {
@@ -158,45 +164,43 @@ const garageLight = new THREE.PointLight(0xffe7cc, 0.9, 30, 2);
 garageLight.position.set(0, 4.5, -2);
 scene.add(garageLight);
 
-function makeLabelSprite(text, bgColor, textColor = "#f0f4f8") {
-  const canvas = document.createElement("canvas");
-  canvas.width = 256;
-  canvas.height = 256;
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = bgColor;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(0,0,0,0.2)";
-  ctx.fillRect(0, canvas.height * 0.6, canvas.width, canvas.height * 0.4);
-  ctx.fillStyle = textColor;
-  ctx.font = "bold 32px sans-serif";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(text, canvas.width / 2, canvas.height / 2);
-  const texture = new THREE.CanvasTexture(canvas);
-  return new THREE.SpriteMaterial({
-    map: texture,
-    transparent: true,
-    depthTest: true,
-    depthWrite: false,
-  });
-}
-
 const garageProps = [];
-function addGarageProp(label, color, position, scale = [2.2, 2.2, 1]) {
-  const material = makeLabelSprite(label, color);
-  const sprite = new THREE.Sprite(material);
-  sprite.position.set(position.x, position.y, position.z);
-  sprite.scale.set(scale[0], scale[1], scale[2]);
-  scene.add(sprite);
-  garageProps.push(sprite);
+function loadPropTexture(url) {
+  const tex = textureLoader.load(url);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
 }
 
-addGarageProp("WORKBENCH", "#4b5561", new THREE.Vector3(-4.5, 1.2, -6), [3.2, 2.2, 1]);
-addGarageProp("TOOLS", "#2f4858", new THREE.Vector3(-6.5, 2.0, -4), [2.2, 1.8, 1]);
-addGarageProp("SHELVES", "#3f3a30", new THREE.Vector3(5.8, 1.8, -5.5), [2.6, 2.6, 1]);
-addGarageProp("SUPPLIES", "#4a3f2f", new THREE.Vector3(6.5, 0.9, -2.5), [2.0, 1.6, 1]);
-addGarageProp("CRATES", "#5a4630", new THREE.Vector3(4.5, 0.8, 4.5), [2.0, 1.6, 1]);
-addGarageProp("GAUGES", "#3b4f4a", new THREE.Vector3(-5.5, 2.2, 3.5), [1.6, 1.6, 1]);
+function addGaragePropPlane(textureUrl, position, size, rotationY = 0) {
+  const mat = new THREE.MeshStandardMaterial({
+    map: loadPropTexture(textureUrl),
+    roughness: 1,
+  });
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(size[0], size[1]), mat);
+  mesh.position.set(position.x, position.y, position.z);
+  mesh.rotation.y = rotationY;
+  scene.add(mesh);
+  garageProps.push(mesh);
+}
+
+addGaragePropPlane(
+  "assets/garage/workbench.jpg",
+  new THREE.Vector3(-4.7, 1.4, -6.7),
+  [3.8, 2.2],
+  Math.PI * 0.1
+);
+addGaragePropPlane(
+  "assets/garage/shelves.jpg",
+  new THREE.Vector3(6.4, 1.8, -6.0),
+  [3.6, 2.6],
+  -Math.PI * 0.1
+);
+addGaragePropPlane(
+  "assets/garage/crates.jpg",
+  new THREE.Vector3(4.2, 1.0, 4.8),
+  [2.6, 1.8],
+  -Math.PI * 0.25
+);
 setGaragePropsVisible(true);
 
 const store = new THREE.Mesh(
@@ -321,8 +325,8 @@ function shoot() {
   }, 300);
 
   player.noise = Math.min(1, player.noise + 0.7);
-  const direction = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion);
-  raycaster.set(camera.getWorldPosition(new THREE.Vector3()), direction);
+  const ndc = new THREE.Vector2(mouse.x * 2 - 1, -(mouse.y * 2 - 1));
+  raycaster.setFromCamera(ndc, camera);
   const targets = zombies.map((z) => z.mesh);
   const hits = raycaster.intersectObjects(targets, false);
   if (hits.length > 0) {
@@ -343,6 +347,10 @@ const keyMap = {
   KeyS: () => (input.forward = -1),
   KeyA: () => (input.right = -1),
   KeyD: () => (input.right = 1),
+  ArrowUp: () => (input.forward = 1),
+  ArrowDown: () => (input.forward = -1),
+  ArrowLeft: () => (input.right = -1),
+  ArrowRight: () => (input.right = 1),
   ShiftLeft: () => (input.run = true),
   ShiftRight: () => (input.run = true),
 };
@@ -352,6 +360,10 @@ const keyUpMap = {
   KeyS: () => (input.forward = input.forward === -1 ? 0 : input.forward),
   KeyA: () => (input.right = input.right === -1 ? 0 : input.right),
   KeyD: () => (input.right = input.right === 1 ? 0 : input.right),
+  ArrowUp: () => (input.forward = input.forward === 1 ? 0 : input.forward),
+  ArrowDown: () => (input.forward = input.forward === -1 ? 0 : input.forward),
+  ArrowLeft: () => (input.right = input.right === -1 ? 0 : input.right),
+  ArrowRight: () => (input.right = input.right === 1 ? 0 : input.right),
   ShiftLeft: () => (input.run = false),
   ShiftRight: () => (input.run = false),
 };
@@ -366,27 +378,41 @@ window.addEventListener("keyup", (event) => {
 });
 
 let isMouseLooking = false;
+renderer.domElement.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
+
 renderer.domElement.addEventListener("mousedown", (event) => {
   if (isMobile) return;
-  if (event.button === 0) {
+  if (event.button === 2) {
     isMouseLooking = true;
+  }
+  if (event.button === 0) {
+    shoot();
   }
 });
 
 window.addEventListener("mouseup", (event) => {
   if (isMobile) return;
-  if (event.button === 0) {
+  if (event.button === 2) {
     isMouseLooking = false;
   }
 });
 
 window.addEventListener("mousemove", (event) => {
-  if (isMobile || !isMouseLooking) return;
-  yaw -= event.movementX * 0.002;
-  pitch -= event.movementY * 0.002;
-  pitch = THREE.MathUtils.clamp(pitch, -pitchLimit, pitchLimit);
-  player.object.rotation.y = yaw;
-  camera.rotation.x = pitch;
+  if (isMobile) return;
+  mouse.x = event.clientX / window.innerWidth;
+  mouse.y = event.clientY / window.innerHeight;
+  ui.crosshair.style.left = `${mouse.x * 100}%`;
+  ui.crosshair.style.top = `${mouse.y * 100}%`;
+
+  if (isMouseLooking) {
+    yaw -= event.movementX * 0.002;
+    pitch -= event.movementY * 0.002;
+    pitch = THREE.MathUtils.clamp(pitch, -pitchLimit, pitchLimit);
+    player.object.rotation.y = yaw;
+    camera.rotation.x = pitch;
+  }
 });
 
 ui.shootBtn.addEventListener("click", shoot);
@@ -606,6 +632,6 @@ function animate(now) {
 
 ui.hint.textContent = isMobile
   ? "Use the joystick to move. Drag right side to look. Tap Shoot."
-  : "Hold left mouse to look. WASD to move. Shift to sprint. M for map.";
+  : "Move: WASD or arrows. Aim with cursor. Left click to shoot. Right drag to look. M for map.";
 
 requestAnimationFrame(animate);

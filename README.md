@@ -41,3 +41,6 @@ Mobile:
 
 Textures:
 - Poly Haven (CC0): garage floor + concrete wall textures
+
+Prop images:
+- Pixabay photos used for garage workbench, shelves, and toolbox
