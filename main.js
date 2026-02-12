@@ -151,8 +151,10 @@ addPickup("med", new THREE.Vector3(92, 0.5, -12));
 const zombies = [];
 const zombieFrontTexture = new THREE.TextureLoader().load("assets/zombies/zombie_front.webp");
 const zombieBackTexture = new THREE.TextureLoader().load("assets/zombies/zombie_back.jpg");
+const zombieSideTexture = new THREE.TextureLoader().load("assets/zombies/zombie_side.jpg");
 zombieFrontTexture.flipY = false;
 zombieBackTexture.flipY = false;
+zombieSideTexture.flipY = false;
 
 function addZombie(position, location) {
   const material = new THREE.SpriteMaterial({ map: zombieFrontTexture, transparent: true });
@@ -439,7 +441,11 @@ function updateZombies(dt) {
     zombie.bobTime += dt * 6;
     zombie.mesh.position.y = 1.6 + Math.sin(zombie.bobTime) * 0.05;
     const viewDot = zombie.facing.dot(toPlayerDir);
-    zombie.material.map = viewDot < 0 ? zombieBackTexture : zombieFrontTexture;
+    if (Math.abs(viewDot) < 0.35) {
+      zombie.material.map = zombieSideTexture;
+    } else {
+      zombie.material.map = viewDot < 0 ? zombieBackTexture : zombieFrontTexture;
+    }
 
     zombie.attackCooldown -= dt;
     if (dist < 1.4 && zombie.attackCooldown <= 0 && !player.inGarage) {
