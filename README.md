@@ -36,3 +36,8 @@ Mobile:
 - Resource storage at base
 - Map travel to unlocked location
 - Scientist objective trigger (placeholder)
+
+## Asset credits
+
+Textures:
+- Poly Haven (CC0): garage floor + concrete wall textures

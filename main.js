@@ -3,6 +3,7 @@ import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
 const canvas = document.createElement("canvas");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 document.body.appendChild(renderer.domElement);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0b0f12);
@@ -15,6 +16,16 @@ scene.add(ambient);
 const sun = new THREE.DirectionalLight(0xffffff, 0.75);
 sun.position.set(40, 60, 20);
 scene.add(sun);
+
+const textureLoader = new THREE.TextureLoader();
+function makeTiledTexture(url, repeatX, repeatY, colorSpace = THREE.NoColorSpace) {
+  const tex = textureLoader.load(url);
+  tex.wrapS = THREE.RepeatWrapping;
+  tex.wrapT = THREE.RepeatWrapping;
+  tex.repeat.set(repeatX, repeatY);
+  tex.colorSpace = colorSpace;
+  return tex;
+}
 
 const ui = {
   health: document.getElementById("health"),
@@ -100,9 +111,22 @@ const ground = new THREE.Mesh(groundGeo, groundMat);
 ground.rotation.x = -Math.PI / 2;
 scene.add(ground);
 
+const garageWallMat = new THREE.MeshStandardMaterial({
+  map: makeTiledTexture(
+    "assets/textures/garage/concrete_wall_diff_2k.jpg",
+    2,
+    1,
+    THREE.SRGBColorSpace
+  ),
+  roughnessMap: makeTiledTexture("assets/textures/garage/concrete_wall_rough_2k.jpg", 2, 1),
+  normalMap: makeTiledTexture("assets/textures/garage/concrete_wall_nor_gl_2k.jpg", 2, 1),
+  roughness: 1,
+});
+garageWallMat.side = THREE.BackSide;
+
 const garage = new THREE.Mesh(
   new THREE.BoxGeometry(18, 6, 18),
-  new THREE.MeshStandardMaterial({ color: 0x30363b })
+  garageWallMat
 );
 garage.position.set(0, 3, 0);
 scene.add(garage);
@@ -113,6 +137,26 @@ const garageDoor = new THREE.Mesh(
 );
 garageDoor.position.set(0, 1.5, 9);
 scene.add(garageDoor);
+
+const garageFloorMat = new THREE.MeshStandardMaterial({
+  map: makeTiledTexture(
+    "assets/textures/garage/garage_floor_diff_2k.jpg",
+    3,
+    3,
+    THREE.SRGBColorSpace
+  ),
+  roughnessMap: makeTiledTexture("assets/textures/garage/garage_floor_rough_2k.jpg", 3, 3),
+  normalMap: makeTiledTexture("assets/textures/garage/garage_floor_nor_gl_2k.jpg", 3, 3),
+  roughness: 1,
+});
+const garageFloor = new THREE.Mesh(new THREE.PlaneGeometry(16, 16), garageFloorMat);
+garageFloor.rotation.x = -Math.PI / 2;
+garageFloor.position.set(0, 0.02, 0);
+scene.add(garageFloor);
+
+const garageLight = new THREE.PointLight(0xffe7cc, 0.9, 30, 2);
+garageLight.position.set(0, 4.5, -2);
+scene.add(garageLight);
 
 function makeLabelSprite(text, bgColor, textColor = "#f0f4f8") {
   const canvas = document.createElement("canvas");
@@ -129,7 +173,12 @@ function makeLabelSprite(text, bgColor, textColor = "#f0f4f8") {
   ctx.textBaseline = "middle";
   ctx.fillText(text, canvas.width / 2, canvas.height / 2);
   const texture = new THREE.CanvasTexture(canvas);
-  return new THREE.SpriteMaterial({ map: texture, transparent: true });
+  return new THREE.SpriteMaterial({
+    map: texture,
+    transparent: true,
+    depthTest: true,
+    depthWrite: false,
+  });
 }
 
 const garageProps = [];
@@ -316,14 +365,23 @@ window.addEventListener("keyup", (event) => {
   if (keyUpMap[event.code]) keyUpMap[event.code]();
 });
 
-renderer.domElement.addEventListener("click", () => {
-  if (!isMobile) {
-    document.body.requestPointerLock();
+let isMouseLooking = false;
+renderer.domElement.addEventListener("mousedown", (event) => {
+  if (isMobile) return;
+  if (event.button === 0) {
+    isMouseLooking = true;
+  }
+});
+
+window.addEventListener("mouseup", (event) => {
+  if (isMobile) return;
+  if (event.button === 0) {
+    isMouseLooking = false;
   }
 });
 
 window.addEventListener("mousemove", (event) => {
-  if (document.pointerLockElement !== document.body) return;
+  if (isMobile || !isMouseLooking) return;
   yaw -= event.movementX * 0.002;
   pitch -= event.movementY * 0.002;
   pitch = THREE.MathUtils.clamp(pitch, -pitchLimit, pitchLimit);
@@ -547,7 +605,7 @@ function animate(now) {
 }
 
 ui.hint.textContent = isMobile
-  ? "Use the joystick to move. Drag right side to look. Tap Shoot." 
-  : "Click to lock mouse. WASD to move. Shift to sprint. M for map.";
+  ? "Use the joystick to move. Drag right side to look. Tap Shoot."
+  : "Hold left mouse to look. WASD to move. Shift to sprint. M for map.";
 
 requestAnimationFrame(animate);
